@@ -7,12 +7,34 @@
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "axios": "^1.4.0",
+    "bcrypt": "^5.0.1",
+    "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.10.5",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
-  }
+    "install": "^0.13.0",
+    "jquery": "^3.7.0",
+    "morgan": "~1.9.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "session-file-store": "^1.5.0",
+    "uid": "^2.0.2"
+  },
+  "description": "testing jss",
+  "main": "app.js",
+  "keywords": [
+    "express",
+    "login",
+    "auth"
+  ],
+  "author": "Mwamuzi shadrick",
+  "license": "ISC"
 }
