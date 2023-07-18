@@ -25,6 +25,8 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
+const domain = 'shamufarming.com'
+
 // Start the server
 server.listen(port, () => {
   console.log(`Server is running at https://${domain}`);
