@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+
+  <script src="javascript/color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.112.5">
+  <title>Modals · Bootstrap v5.3 </title>
+
+  <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/modals/"> -->
+
+
+
+
+
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <!-- <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json"> -->
+  <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+  <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+  <meta name="theme-color" content="#712cf9">
+
+
+
+
+  <!-- Custom styles for this template -->
+  <link href="stylesheets/modals.css" rel="stylesheet">
+</head>
+
+<body>
+ <%- include('partials/colorChanager') %>
+  <!--  
+<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSheet">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h1 class="modal-title fs-5">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <p>This is a modal sheet, a variation of the modal that docs itself to the bottom of the viewport like the newer share sheets in iOS.</p>
+      </div>
+      <div class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+        <button type="button" class="btn btn-lg btn-primary">Save changes</button>
+        <button type="button" class="btn btn-lg btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalChoice">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-3 shadow">
+      <div class="modal-body p-4 text-center">
+        <h5 class="mb-0">Enable this setting?</h5>
+        <p class="mb-0">You can always change your mind in your account settings.</p>
+      </div>
+      <div class="modal-footer flex-nowrap p-0">
+        <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 border-end"><strong>Yes, enable</strong></button>
+        <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0" data-bs-dismiss="modal">No thanks</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalTour">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-body p-5">
+        <h2 class="fw-bold mb-0">What's new</h2>
+
+        <ul class="d-grid gap-4 my-5 list-unstyled small">
+          <li class="d-flex gap-4">
+            <svg class="bi text-body-secondary flex-shrink-0" width="48" height="48"><use xlink:href="#grid-fill"/></svg>
+            <div>
+              <h5 class="mb-0">Grid view</h5>
+              Not into lists? Try the new grid view.
+            </div>
+          </li>
+          <li class="d-flex gap-4">
+            <svg class="bi text-warning flex-shrink-0" width="48" height="48"><use xlink:href="#bookmark-star"/></svg>
+            <div>
+              <h5 class="mb-0">Bookmarks</h5>
+              Save items you love for easy access later.
+            </div>
+          </li>
+          <li class="d-flex gap-4">
+            <svg class="bi text-primary flex-shrink-0" width="48" height="48"><use xlink:href="#film"/></svg>
+            <div>
+              <h5 class="mb-0">Video embeds</h5>
+              Share videos wherever you go.
+            </div>
+          </li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-primary mt-5 w-100" data-bs-dismiss="modal">Great, thanks!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+-->
+  <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog"
+    id="modalSignin">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <h1 class="fw-bold mb-0 fs-2">Login For Free</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+        </div>
+
+                  <!-- ERROR MESSAGE FROM FLASH -->
+                  <% if (messages) { %>
+                    <div class="toast">
+                      <p style="background-color: #ff0000; color:#0dd394"><%= messages.error %></p>
+                    </div>
+                  <% } %>
+                  
+
+        <div class="modal-body p-5 pt-0">
+          <form class="" action="/login/password" method="POST">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control rounded-3" id="username" name="username"
+                placeholder="mwamuziscodev">
+              <label for="username">Username </label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control rounded-3" id="password" name="password"
+                placeholder="password">
+              <label for="password">Password</label>
+            </div>
+            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
+            <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+            <hr class="my-4">
+
+
+            <h2 class="fs-5 fw-bold mb-3" style="text-align: center;"> Or use a third-party</h2>
+            <!-- do not have an account, register -->
+            <a href="/register" role="button" class="mb-2 w-75 mx-auto d-block text-center bg-white shadow px-4 py-3 rounded-3 border"> <i class="fab fa-google"></i>&nbsp;Google sign in<span></span></a>
+            &emsp;&emsp;<br/>
+            <p class="">Already registered?  Click here&ensp;</p>
+
+
+            <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submitx">
+              <svg class="bi me-1" width="16" height="16">
+                <use xlink:href="#twitter" />
+              </svg>
+              Sign up with Twitter
+            </button>
+
+            <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submitx">
+              <svg class="bi me-1" width="16" height="16">
+                <use xlink:href="#facebook" />
+              </svg>
+              Sign up with Facebook
+            </button>
+            <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submitx">
+              <svg class="bi me-1" width="16" height="16">
+                <use xlink:href="#github" />
+              </svg>
+              Sign up with GitHub
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="b-example-divider"></div>
+  <%- include('partials/footer.ejs') %>
+
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
