@@ -11,7 +11,7 @@ router.use(jsend.middleware);
 
 function authenticateToken(req, res, next) {
   if (req.isAuthenticated()) {
-      return next();
+    return next();
   }
 
   res.redirect('/login');
@@ -32,17 +32,17 @@ router.get('/all', authenticateToken, async function (req, res, next) {
 router.get('/byid/:id', authenticateToken, jsonParser, async function (req, res, next) {
   const userId = req.params.id;
   if (!userId) {
-      return res.status(400).jsend.fail({ 'result': 'userId is required' });
+    return res.status(400).jsend.fail({ 'result': 'userId is required' });
   }
 
   try {
-      const user = await userService.getUserById(userId);
-      if (!user) {
-          return res.status(400).jsend.fail({ 'result': 'User with given id not found' });
-      }
-      return res.status(200).jsend.success({ 'result': user });
+    const user = await userService.getUserById(userId);
+    if (!user) {
+      return res.status(400).jsend.fail({ 'result': 'User with given id not found' });
+    }
+    return res.status(200).jsend.success({ 'result': user });
   } catch (error) {
-      return res.status(500).jsend.fail({ 'result': error.message + 'xx' });
+    return res.status(500).jsend.fail({ 'result': error.message + 'xx' });
   }
 });
 
@@ -50,10 +50,10 @@ router.get('/byid/:id', authenticateToken, jsonParser, async function (req, res,
 // all user
 router.get('/user/all', authenticateToken, async function (req, res, next) {
   try {
-      const users = await userService.DisplayAllUser();
-      res.status(200).jsend.success({ 'result': users });
+    const users = await userService.DisplayAllUser();
+    res.status(200).jsend.success({ 'result': users });
   } catch (error) {
-      res.status(500).jsend.fail({ 'result': error.message });
+    res.status(500).jsend.fail({ 'result': error.message });
   }
 });
 

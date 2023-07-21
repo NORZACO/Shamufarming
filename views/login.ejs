@@ -34,10 +34,10 @@
 
   <!-- Custom styles for this template -->
   <link href="stylesheets/modals.css" rel="stylesheet">
+  <script src="js_bootstrap4/color-modes.js"></script>
 </head>
 
 <body>
- <%- include('partials/colorChanager') %>
   <!--  
 <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSheet">
   <div class="modal-dialog" role="document">
@@ -134,12 +134,12 @@
           <form class="" action="/login/password" method="POST">
             <div class="form-floating mb-3">
               <input type="text" class="form-control rounded-3" id="username" name="username"
-                placeholder="mwamuziscodev">
+                placeholder="mwamuziscodev" required>
               <label for="username">Username </label>
             </div>
             <div class="form-floating mb-3">
               <input type="password" class="form-control rounded-3" id="password" name="password"
-                placeholder="password">
+                placeholder="password" required>
               <label for="password">Password</label>
             </div>
             <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>

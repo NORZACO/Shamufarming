@@ -245,48 +245,73 @@
           <!-- ERROR MESSAGE FROM FLASH -->
           <% if (messages.error) { %>
             <div class="toast">
-              <p style="background-color: #ff0000; color:#ffffff"><%= messages.error %></p>
+              <p style="background-color: #ff0000; color:#ffffff">
+                <%= messages.error %>
+              </p>
             </div>
-          <% } %>
-          
+            <% } %>
+
 
 
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
         </div>
-
+        <!-- firstName, lastName, username, email, roleId, password  -->
         <div class="modal-body p-5 pt-0">
           <form class="" action="/signup" method="POST">
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control rounded-3" id="firstName" name="firstName"
+                placeholder="mwamuziscodev">
+              <label for="firstName">firstName </label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control rounded-3" id="lastName" name="lastName"
+                placeholder="mwamuziscodev">
+              <label for="lastName">Last Name </label>
+            </div>
+
             <div class="form-floating mb-3">
               <input type="text" class="form-control rounded-3" id="username" name="username"
                 placeholder="mwamuziscodev">
-              <label for="username">Username </label>
+              <label for="username">username </label>
             </div>
+
+
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control rounded-3" id="email" name="email"
+                placeholder="mwamuziscodev@gmail.com">
+              <label for="email"> Email </label>
+            </div>
+
             <div class="form-floating mb-3">
               <input type="password" class="form-control rounded-3" id="password" name="password"
                 placeholder="password">
               <label for="password">Password</label>
             </div>
-            <div class="form-floating mb-3">
+            <!-- <div class="form-floating mb-3">
               <input type="password" class="form-control rounded-3" id="confirm_passoword" name="confirm_passoword"
                 placeholder="password">
               <label for="confirm_passoword">Confirm Passoword</label>
-            </div>
+            </div> -->
             <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
             <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
             <hr class="my-4">
+
+            <p class="text-center">Already registered? Click here&ensp;</p>
 
             <!-- do not have an account, register -->
             <a href="/login" role="button"
               class="mb-2 w-75 mx-auto d-block text-center bg-white shadow px-4 py-3 rounded-3 border"> <i
                 class="fab fa-google"></i>&nbsp;Go to Login <span></span></a>
             &emsp;&emsp;<br />
-            <p class="">Already registered? Click here&ensp;</p>
+            <!-- <p class="">Already registered? Click here&ensp;</p> -->
 
-
+            <!-- 
 
             <h2 class="fs-5 fw-bold mb-3" style="text-align: center;"> Or use a third-party</h2>
 
-            <!-- <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submitx">
+           <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submitx">
             <svg class="bi me-1" width="16" height="16"><use xlink:href="#twitter"/></svg>
             Sign up with Twitter
           </button>
@@ -298,7 +323,7 @@
             <svg class="bi me-1" width="16" height="16"><use xlink:href="#google"/></svg>
             Sign up with Google
           </button>
-         -->
+        
             <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submitx">
               <svg class="bi me-1" width="16" height="16">
                 <use xlink:href="#apple" />
@@ -311,7 +336,7 @@
               </svg>
               Sign up with GitHub
             </button>
-
+ -->
           </form>
         </div>
         <!-- already have an account -->
@@ -326,7 +351,7 @@
 
     <div class="b-example-divider"></div>
     <%- include('partials/footer.ejs') %>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

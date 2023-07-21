@@ -4,15 +4,15 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('shamufarming:server');
-var http = require('http');
+const app = require('../app');
+const debug = require('debug')('shamufarming:server');
+const http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 const hostname = process.env.DOMAIN_NAME || '127.0.0.7'
@@ -30,6 +30,7 @@ var server = http.createServer(app);
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
+
 
 
 server.on('error', onError);

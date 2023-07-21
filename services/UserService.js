@@ -15,7 +15,7 @@ class UserService {
     }
 
     // INSERT INTO `stocksalesdb`.`users` (`id`, `username`, `email`, `encryptedPassword`, `salt`, `roleId`) VALUES (NULL, NULL, NULL, NULL, NULL, NULL);
-    async createUser(FirstName, LastName, Username, Email, password, RoleId) {
+    async createUser(FirstName, LastName, Username, Email, password) {
         // check if user with same username Exist
         const user = await this.User.findOne({ where: { username: Username } });
         if (user) {
