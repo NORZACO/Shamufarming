@@ -64,8 +64,10 @@ app.use('/bootstrap-icons', express.static(path.join(__dirname, 'node_modules/bo
 // node_modules/@popperjs/core/dist/umd/enums.min.js
 app.use('/popperjs', express.static(path.join(__dirname, 'node_moduless/@popperjs/core/dist/umd')))
 
-// ... additional middleware and routes
-
+// npm i font-awesome
+app.use('/font-awesome', express.static(path.join(__dirname, 'node_modules/font-awesome')))
+// npm i @fortawesome/fontawesome-free
+// app.use('/fontawesome', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free')))
 app.use(passport.initialize());
 // app.use(passport.session());
 
