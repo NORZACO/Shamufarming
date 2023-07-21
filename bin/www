@@ -15,7 +15,7 @@ const http = require('http');
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-const hostname = process.env.DOMAIN_NAME || '127.0.0.7'
+const hostname = process.env.DOMAIN_NAME || '127.0.0.1'
 
 /**
  * Create HTTP server.

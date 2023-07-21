@@ -16,13 +16,29 @@ const envPath = path.resolve(__dirname, '.env');
 
 // Array of environment variables to set
 const envVars = [
+    '#DATABASE CONNECTION VARIABLES',
     'HOST=127.0.0.1',
-    'ADMIN_USERNAME=mwamuziscode',
+    'ADMIN_USERNAME=admin',
     'ADMIN_PASSWORD=P@ssw0rd',
+    'DATABASE_NAME=StockSalesDB',
+    'DIALECT=mysql',
     'PORT=3000',
     '\n\n',
-    `#THIS IS OUR SECRET KEY`,
-    `SESSION_SECRET_KEY=${generateRandomString()}`, // setting the access token secret as a randomly generated string
+    '#DROP_ALL_DATA_OR_SYNCHRONISE=true will drop all the data from the database if it is true or just synchronise the database with the models if it is false',
+    'DROP_ALL_DATA_OR_SYNCHRONISE=true',
+
+    '#guest id that will be added in database role id for guest user',
+    `ACCESS_GUEST_ROLE=guest-user-${uid(15)}`,
+    '\n\n',
+    '#Showing data for admin',
+    'ACCESS_Admin_TOKEN=Admin',
+    '#Showing data dor registered user',
+    'ACCESS_Register_TOKEN=Register',
+    '#Showing data for guest',
+    'ACCESS_Guest_TOKEN=Guest',
+    '\n\n',
+    `#THIS IS OUR SECRET GENERATED ACCESS TOKEN `,
+    `ACCESS_TOKEN_SECRET=${generateRandomString()}`, // setting the access token secret as a randomly generated string
 ];
 
 // Appending the environment variables to the .env file
