@@ -37,7 +37,7 @@ class UserService {
 
 
         // check if role with same roleId Exist
-        const role = await this.Role.findOne({ where: { id: RoleId } });
+        const role = await this.Role.findOne({ where: { id: role } });
         if (!role) {
             throw new Error('Role with a given roleId not found');
         }
@@ -58,7 +58,7 @@ class UserService {
                 username: Username,
                 email: Email,
                 encryptedPassword: EncryptedPassword,
-                roleId: RoleId
+                roleId: role
             }, {
                 transaction: t
             });
@@ -205,8 +205,19 @@ class UserService {
 
 
 
+    // userService.getOneByName
+    async getOneByName(Username) {
+        return this.User.findOne({
+            where: { username: Username }
+        })
+    }
+
+
+
+
     // create user
     async createUser(FirstName, LastName, Username, Email, password, RoleId) {
+        RoleId = 2
         // check if user with same username Exist
         const user = await this.User.findOne({ where: { username: Username } });
         if (user) {
@@ -234,26 +245,26 @@ class UserService {
         const t = await this.client.transaction();
 
         try {
-// find or create user with username
-const santRount = 10;
-const EncryptedPassword = await bcrypt.hash(password, santRount);
+            // find or create user with username
+            const santRount = 10;
+            const EncryptedPassword = await bcrypt.hash(password, santRount);
 
-        const [newUser, created] = await this.User.findOrCreate({
-            where: { username: Username },
-            defaults: {
-                firstName: FirstName,
-                lastName: LastName,
-                username: Username,
-                email: Email,
-                encryptedPassword: EncryptedPassword,
-                roleId: RoleId
-            },
-            transaction: t
-        });
+            const [newUser, created] = await this.User.findOrCreate({
+                where: { username: Username },
+                defaults: {
+                    firstName: FirstName,
+                    lastName: LastName,
+                    username: Username,
+                    email: Email,
+                    encryptedPassword: EncryptedPassword,
+                    roleId : RoleId
+                },
+                transaction: t
+            });
 
-        if (!created) {
-            throw new Error('User with a given username already exist');
-        }
+            if (!created) {
+                throw new Error('User with a given username already exist');
+            }
 
             await t.commit();
 
@@ -271,7 +282,7 @@ const EncryptedPassword = await bcrypt.hash(password, santRount);
 
 
 
-    }
+}
 //TODO: Creat user service
 module.exports = UserService;
 

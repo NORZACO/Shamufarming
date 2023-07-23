@@ -15,7 +15,8 @@ passport.use(new LocalStrategy(function verify(username, password, Callback) {
         //bcrypt
         const saltRounds = parseInt(process.env.SALT) || 8;
         console.log("salt rounds", saltRounds)
-        bcrypt.compare(password, data.password, (err, result) => {
+        const hashedPassword = data.encryptedPassword.toString()
+        bcrypt.compare(password, hashedPassword, (err, result) => {
             if (err) { return Callback(err); }
             if (!result) {
                 return Callback(null, false, { message: 'Incorrect username or password.' });
@@ -59,7 +60,7 @@ router.post('/logout', function (req, res, next) {
     });
 });
 
-router.get('/signup', function (req, res, next) {
+router.get('/register', function (req, res, next) {
     res.render('signup');
 });
 
@@ -68,7 +69,7 @@ router.post('/signup', async function(req, res, next) {
     // FirstName, LastName, Username, Email, password, RoleId
     const { firstName, lastName, username, email, password } = req.body
   try {
-    await userService.create(
+    await userService.createUser(
         firstName,
         lastName,
         username,

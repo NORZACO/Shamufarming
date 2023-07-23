@@ -51,7 +51,9 @@ router.get('/byid/:id', authenticateToken, jsonParser, async function (req, res,
 router.get('/user/all', authenticateToken, async function (req, res, next) {
   try {
     const users = await userService.DisplayAllUser();
-    res.status(200).jsend.success({ 'result': users });
+    const context = { title: "Parts for your needs", user: req.user || null, messages: req.flash() };
+    res.render('user/all', { users: users, context });
+    res.status(200).render({ 'result': users });
   } catch (error) {
     res.status(500).jsend.fail({ 'result': error.message });
   }
