@@ -1,9 +1,8 @@
-
-
 <%- include('colorChange.ejs') %>
 
-<main>
-  <h1 class="visually-hidden">Headers examples</h1>
+  <main>
+    <h1 class="visually-hidden">Headers examples</h1>
+
   <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <div class="col-md-3 mb-2 mb-md-0">
@@ -32,34 +31,48 @@
         </a></li>
       </ul>
 
-      <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
         <input type="search" class="form-control form-control-dark text-bg-red" placeholder="Search..." aria-label="Search">
-      </form> -->
+      </form>
+     
+
       <% if (user) { %>
+        <div class="col-md-3 text-end">
+          <a href="/logout">
+            <button type="button" class="btn btn-outline-primary me-2">
+              <i class="bi bi-box-arrow-in-left"></i> Logout
+            </button>
+          </a>
 
-      <div class="col-md-3 text-end">
-        <a href="/login">
-          <button type="button" class="btn btn-outline-primary me-2">
-            <i class="bi bi-box-arrow-in-right"></i> Login
-          </button>
-        </a>
-
-        <% } else if (!user) { %>
-    
-
+          <a href="/profile">
+            <button type="button" class="btn btn-primary">
+              <i class="bi bi-person-circle"></i> Profile
+            </button>
+          </a>
+        </div>
+      <% } else if (!user) { %>
         <a href="/register">
           <button type="button" class="btn btn-primary">
             <i class="bi bi-person-plus"></i> Sign-up
           </button>
         </a>
-            <% } %>
-      </div>
+
+        <div class="col-md-3 text-end">
+          <a href="/login">
+            <button type="button" class="btn btn-outline-primary me-2">
+              <i class="bi bi-box-arrow-in-right"></i> Login
+            </button>
+          </a>
+        </div>
+      <% } %>
     </header>
   </div>
 
-  <!-- <div class="b-example-divider"></div> -->
 
-  <!-- <header class="p-3 text-bg-dark">
+
+    <!-- <div class="b-example-divider"></div> -->
+
+    <!-- <header class="p-3 text-bg-dark">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -86,8 +99,8 @@
     </div>
   </header> -->
 
-  <!-- <div class="b-example-divider"></div> -->
-  <!-- 
+    <!-- <div class="b-example-divider"></div> -->
+    <!-- 
   <header class="p-3 mb-3 border-bottom">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -121,4 +134,4 @@
       </div>
     </div>
   </header> -->
-</main>
+  </main>
