@@ -8,6 +8,8 @@ SELECT * FROM stocksalesdb.users;
 SELECT * FROM stocksalesdb.roles;
 
 
+DELETE FROM users WHERE id > 0;
+
 
 -- INSERT INTO roles (`id`, `name`)VALUES(id, 'name');
 INSERT INTO roles (`id`, `name`)VALUES(2, 'Registered');

@@ -13,7 +13,12 @@ const FileStore = require('session-file-store')(session);
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+// authentic router
 const authRouter = require('./routes/auths')
+// proile router
+const proileRouter = require('./routes/profile')
+
+
 const app = express();
 
 const db = require('./models');
@@ -97,6 +102,8 @@ app.use(flash());
 app.use('/', indexRouter);
 app.use('/', usersRouter);
 app.use('/', authRouter);
+app.use('/', proileRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
