@@ -73,6 +73,11 @@ app.use('/popperjs', express.static(path.join(__dirname, 'node_moduless/@popperj
 app.use('/font-awesome', express.static(path.join(__dirname, 'node_modules/font-awesome')))
 // npm i @fortawesome/fontawesome-free
 // app.use('/fontawesome', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free')))
+
+// '/node_modules/txtanime.js/dist'
+app.use('/txtanime', express.static(path.join(__dirname, 'node_modules/txtanime.js/dist')))
+
+
 app.use(passport.initialize());
 // app.use(passport.session());
 
