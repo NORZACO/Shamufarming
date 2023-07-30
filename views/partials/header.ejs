@@ -111,6 +111,29 @@
         <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
         <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
         <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="#"><i class="fas fa-store"></i> Store</a></li>
+        <% if (user) { %>
+          <li>
+            <a href="/users/<%= user._id %>">
+              <i class="fas fa-user"></i> <%= user.username %>
+            </a>
+         </li>
+         <!-- logout post form -->
+          <li style="color: aliceblue;">
+            <form action="/logout" method="POST" >
+              <button class="btn btn-link nav-link px-2 link-body-emphasisx" type="submit">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </button>
+            </form>
+          </li>
+
+        <% } else if (!user) { %>
+          <li><a href="/login"> <i class="bi bi-box-arrow-in-left"></i> Login </a></li>
+        <% } %>
+
+
+
+
       </ul>
     </nav>
     <label for="nav-toggle" class="nav-toggle-label">
